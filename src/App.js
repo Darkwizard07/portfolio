@@ -454,10 +454,17 @@ function ProfileSection() {
         }}
       >
         <h3 style={{ fontFamily: 'Orbitron, sans-serif', color: '#8b5cf6', fontSize: '1.5rem', marginBottom: '1.5rem' }}>SYSTEM STATUS</h3>
-        <p style={{ lineHeight: '1.8', marginBottom: '2rem', color: '#eee' }}>
-          A Shadow Monarch at work—transforming concepts into working systems through code. 
-          Currently leading the campus validation study for FlocHealth and managing corporate sponsorships for Aerophilia 2025.
-        </p>
+        <motion.p
+  animate={{ opacity: [0.8, 1, 0.8] }}
+  transition={{ duration: 3, repeat: Infinity }}
+  style={{ lineHeight: '1.8', marginBottom: '2rem', color: '#eee' }}
+>
+  An S-Rank CSE Engineer architecting concepts into working systems through code.
+  Currently operating as a Product Growth Associate at FlocCare, I lead the 
+  validation and expansion of digital health platforms. 
+  From high-level system design to strategic product scaling, I am 
+  continuously strengthening a shadow army of logic and innovation.
+</motion.p>
 
         <h3 style={{ fontFamily: 'Orbitron, sans-serif', color: '#8b5cf6', fontSize: '1.5rem', marginBottom: '1.5rem' }}>CODING ARMORY</h3>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.2rem' }}>
