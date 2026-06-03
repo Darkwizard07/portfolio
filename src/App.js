@@ -493,8 +493,8 @@ function ProfileSection() {
 function ExperienceTimeline() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
   const experiences = [
-    { date: '2026 - PRESENT', title: 'Product Developer - FlocHealth', description: 'Leading product development for health awareness, including the campus validation study.', icon: <FaCrown />, color: '#ffd700' },
-    { date: '2021 - 2027', title: 'CSE Engineer', description: 'Developing high-rank projects including AI legal summarizers and civic-sense platforms.', icon: <GiBroadsword />, color: '#c0c0c0' },
+    { date: 'Jan 2026 - Apr 2026', title: 'Product Growth Associate - FlocHealth', description: 'Leading product development for health awareness, including the campus validation study.', icon: <FaCrown />, color: '#ffd700' },
+    { date: '2023 - 2027', title: 'CSE Engineer', description: 'Developing high-rank projects including AI legal summarizers and civic-sense platforms.', icon: <GiBroadsword />, color: '#c0c0c0' },
     { date: '2019 - 2021', title: 'Sharadha PU College', description: 'Built a strong foundation in analytical thinking and problem-solving.', icon: <GiMagicShield />, color: '#cd7f32' }
   ];
 
