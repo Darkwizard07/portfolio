@@ -137,6 +137,12 @@ function LoadingScreen() {
 function ConsentProvider() {
   useEffect(() => {
     window.__CMP_API_KEY = 'cmp_live_4vWq9fHzXZ1P1I5UC5zADzEL_ncVB801MTHaK2DnL5o';
+    
+    // If the snippet was already included via index.html <head>, don't duplicate it
+    if (document.querySelector('script[data-site-key="site_613329aea05d32e4b3a5b689a96bfcafd5fc165d302f67d4"]')) {
+      return;
+    }
+
     const script = document.createElement('script');
     script.src = 'https://tor-consent-manager.vercel.app/api/sdk/script';
     script.async = true;
