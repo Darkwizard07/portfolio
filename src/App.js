@@ -624,6 +624,27 @@ function ContactSection() {
           </motion.a>
         ))}
       </div>
+      <div style={{ marginTop: '2.5rem' }}>
+        <button
+          onClick={() => {
+            if (window.CMP && typeof window.CMP.openPreferenceCenter === 'function') {
+              window.CMP.openPreferenceCenter();
+            }
+          }}
+          style={{
+            background: 'rgba(139, 92, 246, 0.1)',
+            border: '1px solid rgba(139, 92, 246, 0.4)',
+            color: '#c4b5fd',
+            padding: '0.5rem 1.2rem',
+            borderRadius: '20px',
+            fontSize: '0.85rem',
+            cursor: 'pointer',
+            letterSpacing: '1px'
+          }}
+        >
+          ⚙️ Cookie Preferences
+        </button>
+      </div>
     </div>
   );
 }
