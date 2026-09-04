@@ -25,11 +25,16 @@
     </script>
     <!-- /CMP -->
 
-    <!-- Script enforcement: Tag third-party scripts with data-cmp-purpose and type="text/plain". The SDK pauses them until consent is granted. -->
-    <!-- Examples:
-    <script type="text/plain" data-cmp-purpose="analytics" src="https://www.google-analytics.com/analytics.js"></script>
-    <script type="text/plain" data-cmp-purpose="advertising"> // Marketing/Ad pixel code </script>
-    -->
+    <!-- Third-Party Trackers (Enforced by CMP SDK) -->
+    <!-- Google Analytics (GA4) - Paused until visitor accepts "analytics" -->
+    <script type="text/plain" data-cmp-purpose="analytics" src="https://www.googletagmanager.com/gtag/js?id=G-DEMOTRACKER1"></script>
+    <script type="text/plain" data-cmp-purpose="analytics">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DEMOTRACKER1');
+      console.log('[CMP Tracker Test] Google Analytics has executed after consent was granted!');
+    </script>
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
