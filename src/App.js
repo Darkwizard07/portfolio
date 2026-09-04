@@ -132,6 +132,24 @@ function LoadingScreen() {
   );
 }
 
+// ==================== CONSENT PROVIDER ====================
+
+function ConsentProvider() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://tor-consent-manager.vercel.app/api/sdk/script';
+    script.async = true;
+    script.setAttribute('data-site-key', 'site_613329aea05d32e4b3a5b689a96bfcafd5fc165d302f67d4');
+    document.head.appendChild(script);
+    return () => {
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
+    };
+  }, []);
+  return null;
+}
+
 // ==================== MAIN COMPONENT ====================
 
 function App() {
@@ -159,6 +177,7 @@ function App() {
 
   return (
     <AppContainer>
+      <ConsentProvider />
       <AnimatePresence mode="wait">
         {loading ? (
           <LoadingScreen key="loading" />
