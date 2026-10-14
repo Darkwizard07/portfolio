@@ -132,32 +132,6 @@ function LoadingScreen() {
   );
 }
 
-// ==================== CONSENT PROVIDER ====================
-
-function ConsentProvider() {
-  useEffect(() => {
-    window.__CMP_API_KEY = 'cmp_live_4vWq9fHzXZ1P1I5UC5zADzEL_ncVB801MTHaK2DnL5o';
-    
-    // If the snippet was already included via index.html <head>, don't duplicate it
-    if (document.querySelector('script[data-site-key="site_613329aea05d32e4b3a5b689a96bfcafd5fc165d302f67d4"]')) {
-      return;
-    }
-
-    const script = document.createElement('script');
-    script.src = 'https://tor-consent-manager.vercel.app/api/sdk/script';
-    script.async = true;
-    script.setAttribute('data-site-key', 'site_613329aea05d32e4b3a5b689a96bfcafd5fc165d302f67d4');
-    script.setAttribute('data-api-key', 'cmp_live_4vWq9fHzXZ1P1I5UC5zADzEL_ncVB801MTHaK2DnL5o');
-    document.head.appendChild(script);
-    return () => {
-      if (document.head.contains(script)) {
-        document.head.removeChild(script);
-      }
-    };
-  }, []);
-  return null;
-}
-
 // ==================== MAIN COMPONENT ====================
 
 function App() {
@@ -185,7 +159,6 @@ function App() {
 
   return (
     <AppContainer>
-      <ConsentProvider />
       <AnimatePresence mode="wait">
         {loading ? (
           <LoadingScreen key="loading" />
